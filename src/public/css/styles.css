@@ -1,0 +1,200 @@
+/* Color vars should go here */
+:root {
+	--main: #00629B;
+	--accent: #FFCD00;
+	--secondary: white;
+	--dark: #2A1A4E;
+}
+
+* {
+	scrollbar-width: auto;
+	scrollbar-color: var(--main) transparent;
+}
+*::-webkit-scrollbar {
+	width: 0.6em;
+	height: 0.6em;
+}
+*::-webkit-scrollbar-track {
+	background: var(--main);
+}
+*::-webkit-scrollbar-thumb {
+	background-color: var(--secondary);
+}
+html {
+	font-family: "Roboto", sans-serif;
+	font-weight: bold;
+}
+body {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: var(--main);
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+}
+.topbar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	color: var(--main);
+	background-color: var(--secondary);
+	padding: 0.5em;
+	align-items: center;
+}
+.topbar.burger-bar {
+	flex-direction: column;
+	position: relative;
+}
+.topbar.burger-bar > .img-cont {
+	align-self: flex-start;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	align-items: center;
+}
+.burger {
+	font-size: 2.8em;
+	font-weight: normal;
+	user-select: none;
+	cursor: pointer;
+	margin-right: 0.3em;
+}
+.link-items.burger-time {
+	flex-direction: column;
+	position: absolute;
+	right: 1em;
+	background-color: var(--secondary);
+	width: 10em;
+	box-shadow: rgba(0,0,0,0.3) 4px 4px 3px 0px;
+	right: 0;
+	bottom: -15em;
+}
+.link-items.burger-time > a {
+	margin: 0;
+	padding: 0.4em 0.75em;
+}
+.link-items.burger-time > a:hover {
+	background-color: rgba(0,0,0,0.1);
+}
+.navlink {
+	font-size: 1.3em;
+	margin: 0.75em;
+}
+.splash {
+	background-color: var(--main);
+	background-blend-mode: multiply;
+	border-radius: 0 0 50% 50% / 4rem;
+	background-position: center;
+	height: 35em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+.call-to-action {
+	font-size: 3.2em;
+    width: 11em;
+    color: var(--secondary);
+    text-align: center;
+	font-family: "Montserrat";
+}
+.splash-socials {
+	margin-top: 2em;
+}
+.splash-socials > a {
+	margin-left: 1.5em;
+	margin-right: 1.5em;
+}
+.default-section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	color: var(--main);
+	background-color: var(--secondary);
+	padding-top: 2em;
+    padding-bottom: 2em;
+}
+.section-title {
+	font-size: 3em;
+}
+.default-section > p, .project-space > p {
+	font-size: 1.8em;
+    width: 22em;
+    color: var(--dark);
+	text-align: center;
+}
+.project-space > p {
+	color: var(--secondary);
+}
+.project-space {
+	border-radius: 50% 50% 0 0 / 4rem;
+	background-color: var(--main);
+	background-blend-mode: multiply;
+	background-image: url("../img/backgrounds/ps.png");
+	height: 40em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+.project-space a {
+	color: var(--accent);
+}
+.ps-title {
+	font-size: 3em;
+    color: white;
+    margin-bottom: 1em;
+}
+.visit-us {
+	font-size: 2em;
+	margin-bottom: 2em;
+}
+.involved {
+	border-radius: 50% 50% 0 0 / 4rem;
+	transform: translateY(-4rem);
+	height: 30em;
+}
+.cards {
+	display: flex;
+	justify-content: space-between;
+}
+.involve-card {
+	padding: 2.5em;
+    background: var(--main);
+    border-radius: 1.5em;
+    color: white;
+}
+.involve-card > a {
+	color: white;
+}
+.involve-card > img {
+	width: 20em;
+}
+
+/* Responsive queries go here */
+@media screen and (max-width: 617px) {
+
+}
+@media screen and (max-width: 900px) {
+	
+}
+@media screen and (max-width: 1140px) {
+	
+}
+@media screen and (min-width: 1645px) {
+	
+}
