@@ -13,7 +13,7 @@ interface TopBarState {
 }
 
 export default class TopBar extends Component<TopBarProps, TopBarState> {
-	private static HAMBURGER_POINT = 1080;
+	private static HAMBURGER_POINT = 1290;
 	constructor(props: TopBarProps) {
 		super(props);
 		this.state = {

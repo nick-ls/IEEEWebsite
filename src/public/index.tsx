@@ -1,11 +1,13 @@
 import * as ReactDom from "react-dom";
 import * as React from "react";
 import TopBar from "./components/topbar";
-import {ACTIVE_PAGES} from "./Config";
+import {ACTIVE_PAGES, SOCIALS, EMAIL, OFFICERS} from "./Config";
 import Splash from "./components/Splash";
 import DefaultSection from "./components/DefaultSection";
 import InvolveBox from "./components/InvolveBox";
-
+import SocialCard from "./components/SocialCard";
+import Carousel from "./components/Carousel";
+import Footer from "./components/Footer";
 
 interface MainProps {}
 interface MainState {}
@@ -28,13 +30,24 @@ class Main extends React.Component<MainProps, MainState> {
 				<p>The <a href="https://www.google.com/maps/@32.8817126,-117.2350998,59m/">IEEE Project Space</a> is an open-access, collaborative space where students can do homework or get access to basic electronic tools such as soldering stations, breadboard components, and Arduino and Raspberry PI parts!</p>
 				<a className="visit-us" href="https://www.google.com/maps/@32.8817126,-117.2350998,59m/">Come visit at EBU1-4710!</a>
 			</div>
-			{<DefaultSection className={"involved"} title="How else can I get involved?">
+			<DefaultSection className={"involved"} title="How else can I get involved?">
 				<div className="cards">
 					<InvolveBox boxTitle="Events" image="https://dummyimage.com/400x400/000/fff" description="sdfsfdsd"></InvolveBox>
 					<InvolveBox boxTitle="Projects" image="https://dummyimage.com/400x400/000/fff" description="sdfdsfdsf"></InvolveBox>
 					<InvolveBox boxTitle="Committees" image="https://dummyimage.com/400x400/000/fff" description="sdfsdfsdf"></InvolveBox>
 				</div>
-			</DefaultSection>}
+			</DefaultSection>
+			<DefaultSection title="Have questions? Contact us!">
+				<div className="join-scls">{
+					[...EMAIL, ...SOCIALS].map(n => (
+						<SocialCard url={n.url} image={n.icon} message={n.message}></SocialCard>
+					))
+				}</div>
+			</DefaultSection>
+			<DefaultSection className="contact" title="Or... Contact one of our staff!">
+				<Carousel items={OFFICERS} itemsPerPage={8}></Carousel>
+			</DefaultSection>
+			<Footer></Footer>
 		</>;
 	}
 }
