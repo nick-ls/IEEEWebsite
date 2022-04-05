@@ -21,6 +21,19 @@ export default class TopBar extends Component<TopBarProps, TopBarState> {
 			menuVisible: false
 		};
 		window.addEventListener("resize", this.checkResize.bind(this));
+		window.addEventListener("click", ((e: Event)=>{
+			let target = e.target as HTMLElement;
+			let found = false;
+			while (target.parentElement && !found) {
+				if (target.classList.contains("link-items") || target.classList.contains("topbar")) {
+					found = true;
+				}
+				target = target.parentElement;
+			}
+			if (!found) {
+				this.setState({menuVisible: false});
+			}
+		}).bind(this));
 	}
 	private toggleMenu() {
 		this.setState({menuVisible: !this.state.menuVisible});

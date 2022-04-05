@@ -49,6 +49,8 @@ a:hover {
 	background-color: var(--secondary);
 	padding: 0.5em;
 	align-items: center;
+	box-shadow: 1px 1px 4px 1px rgb(0 0 0 / 50%);
+    z-index: 3;
 }
 .topbar.burger-bar {
 	flex-direction: column;
@@ -78,7 +80,7 @@ a:hover {
 	width: 10em;
 	box-shadow: rgba(0,0,0,0.3) 4px 4px 3px 0px;
 	right: 0;
-	margin-top: 0.36em;
+	margin-top: 0.34em;
 }
 .link-items.burger-time > a {
 	margin: 0;
@@ -189,7 +191,7 @@ a:hover {
 	color: var(--main);
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 	flex-direction: column;
 	margin: 1em;
 }
@@ -197,6 +199,11 @@ a:hover {
 	font-size: 3em;
 	color: var(--main);
 	margin-bottom: 0.5em;
+}
+.involve-description {
+	width: 16em;
+	font-size: 1.2em;
+	text-align: center;
 }
 .involve-card > img {
 	width: 20em;
@@ -234,12 +241,14 @@ a:hover {
 	border: 0.35em solid var(--main);
 	border-radius: 1em;
 	margin: 1em;
+	width: 16em;
 }
 .carousel-item > img {
-	width: 18.7em;
+	width: 16em;
 }
 .carousel-name {
 	font-size: 2em;
+	text-align: center;
 }
 .carousel-pos {
 	font-style: italic;
@@ -258,6 +267,7 @@ a:hover {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin-bottom: 3em;
 }
 .carousel-left {
 	margin-left: 2em;
@@ -265,7 +275,7 @@ a:hover {
 }
 .carousel-right, .carousel-left {
 	cursor: pointer;
-	width: 4em;
+	width: 2em;
 }
 .carousel-right {
 	margin-right: 2em;
@@ -310,6 +320,18 @@ a:hover {
 	}
 	.footer > img{
 		width: 15em;
+	}
+	.link-items.burger-time {
+		font-size: 2em;
+		margin-top: 0.17em;
+	}
+	div.topbar.burger-bar {
+		position: fixed;
+		z-index: 2;
+		width: 100%;
+	}
+	.splash {
+		padding-top: 2em;
 	}
 }
 @media screen and (max-width: 540px) {

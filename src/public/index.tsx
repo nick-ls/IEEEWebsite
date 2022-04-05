@@ -32,9 +32,9 @@ class Main extends React.Component<MainProps, MainState> {
 			</div>
 			<DefaultSection className={"involved"} title="How else can I get involved?">
 				<div className="cards">
-					<InvolveBox boxTitle="Events" image="https://dummyimage.com/400x400/000/fff" description="sdfsfdsd"></InvolveBox>
-					<InvolveBox boxTitle="Projects" image="https://dummyimage.com/400x400/000/fff" description="sdfdsfdsf"></InvolveBox>
-					<InvolveBox boxTitle="Committees" image="https://dummyimage.com/400x400/000/fff" description="sdfsdfsdf"></InvolveBox>
+					<InvolveBox boxTitle="Events" image="img/backgrounds/pumpkin.jpg" description="Come bond with us during our events! We have various social events throughout the quarter, k-12 outreach to give back to the community, plus technical and professional workshops to equip you for life after graduation!"></InvolveBox>
+					<InvolveBox boxTitle="Projects" image="img/backgrounds/projects.jpg" description="Apply to our project teams! Gain technical skills and hands-on project experience working together in teams in quarterly or annually long commitments. Whether you are just starting out,s or want to put your advanced skills to the test, IEEE has a project for you!"></InvolveBox>
+					<InvolveBox boxTitle="Committees" image="img/backgrounds/committees.jpg" description="Want to become more involved? Join our committees and gain valuable experience from our events chairs by brainstorming ideas and planning behind the scenes alongside them!"></InvolveBox>
 				</div>
 			</DefaultSection>
 			<DefaultSection title="Have questions? Contact us!">

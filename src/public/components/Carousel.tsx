@@ -9,14 +9,20 @@ interface CarouselProps {
 }
 interface CarouselState {
 	page: number;
+	itemsPerPage: number;
 }
 
 export default class Carousel extends Component<CarouselProps, CarouselState> {
+	private static HALF_LIFE = 600;
 	constructor(props: CarouselProps) {
 		super(props);
 		this.state = {
-			page: 0
+			page: 0,
+			itemsPerPage: this.getItemsPerPage()
 		};
+		window.addEventListener("resize", (()=>{
+			this.setState({itemsPerPage: this.getItemsPerPage()});
+		}).bind(this));
 	}
 
 	private prevPage() {
@@ -24,14 +30,18 @@ export default class Carousel extends Component<CarouselProps, CarouselState> {
 	}
 
 	private nextPage() {
-		this.setState({ page: this.state.page + 1 > Math.ceil(this.props.items.length / this.props.itemsPerPage) - 1 ?
-			Math.ceil(this.props.items.length / this.props.itemsPerPage) - 1 :
+		this.setState({ page: this.state.page + 1 > Math.ceil(this.props.items.length / this.state.itemsPerPage) - 1 ?
+			Math.ceil(this.props.items.length / this.state.itemsPerPage) - 1 :
 			this.state.page + 1
 		});
 	}
 
+	private getItemsPerPage() {
+		return Math.floor(this.props.itemsPerPage / (window.innerWidth < Carousel.HALF_LIFE ? 2 : 1));
+	}
+
 	public render() {
-		let arr = this.chunkArray(this.props.items);
+		let arr = this.chunkArray(this.props.items, this.state.itemsPerPage);
 		return <div className="carousel">
 			<img className="carousel-left" src="img/arrow.svg" style={
 				this.state.page === 0 ? {visibility: "hidden"} : {}
@@ -47,10 +57,10 @@ export default class Carousel extends Component<CarouselProps, CarouselState> {
 		</div>;
 	}
 
-	private chunkArray(array: CarouselItemProps[]):CarouselItemProps[][] {
+	private chunkArray(array: CarouselItemProps[], chunkLen: number):CarouselItemProps[][] {
 		let returnArr = [];
-		for(let i = 0; i < array.length; i+=this.props.itemsPerPage) {
-			returnArr.push(array.slice(i, i + this.props.itemsPerPage));
+		for(let i = 0; i < array.length; i += chunkLen) {
+			returnArr.push(array.slice(i, i + chunkLen));
 		}
 		return returnArr;
 	}
