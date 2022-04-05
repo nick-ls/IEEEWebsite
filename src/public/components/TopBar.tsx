@@ -51,11 +51,11 @@ export default class TopBar extends Component<TopBarProps, TopBarState> {
 		}`}>
 			<div className="img-cont">
 				<a href="/"><img src="img/logo.svg"></img></a>
-				<div className="burger" style={{ 
+				{/*<div className="burger" style={{ 
 					display: this.state.showBurger ? "initial" : "none" 
-				}} onClick={this.toggleMenu.bind(this)} role="menubar">≡</div>
+				}} onClick={this.toggleMenu.bind(this)} role="menubar">≡</div>*/}
 			</div>
-			<div className="links">
+			{/*<div className="links">
 				
 				<div className={`link-items${
 					this.state.showBurger ? " burger-time" : ""
@@ -66,7 +66,7 @@ export default class TopBar extends Component<TopBarProps, TopBarState> {
 						return <a className="navlink" href={l.url}>{l.name}</a>
 					})
 				}</div>	
-			</div>
+			</div>*/}
 		</div>;
 	}
 }

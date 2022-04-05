@@ -16,7 +16,7 @@ export default class InvolveBox extends Component<InvolveBoxProps, InvolveBoxSta
 
 	public render() {
 		return <div className="involve-card">
-			<a className="involve-title" href={"/"+this.props.boxTitle.toLowerCase()}>{this.props.boxTitle}</a>
+			<a className="involve-title" {...{}/*href={"/"+this.props.boxTitle.toLowerCase()}*/}>{this.props.boxTitle}</a>
 			<img src={this.props.image}></img>
 			<div className="involve-description">{this.props.description}</div>
 		</div>;
