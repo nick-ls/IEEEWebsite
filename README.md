@@ -1,2 +1,2 @@
-# NewWebsite
-The new IEEE website for the section at UCSD
+# IEEE at UCSD
+A React redesign of the existing IEEE chapter website at UCSD.
